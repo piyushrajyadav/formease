@@ -1,0 +1,31 @@
+# Source files (not needed in package)
+src/
+tests/
+demo/
+
+# Configuration files
+tsconfig.json
+rollup.config.js
+jest.config.cjs
+.eslintrc.js
+.prettierrc
+
+# Development files
+.github/
+.vscode/
+*.log
+*.tgz
+
+# Git files
+.git/
+.gitignore
+
+# Documentation (keep README.md and LICENSE)
+CONTRIBUTING.md
+CHANGELOG.md
+
+# Node modules
+node_modules/
+
+# Build artifacts (keep only dist/)
+*.map
