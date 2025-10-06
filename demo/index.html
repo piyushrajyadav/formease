@@ -3,196 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FormEase - Complete Demo</title>
+  <title>FormEase - Intelligent Form Handling Made Simple</title>
+  <meta name="description" content="A lightweight, intelligent form handling library with validation, autosave, and accessibility features">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Prism.js for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  
+  <!-- Custom styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <div class="brand">
-        <h1>📋 FormEase</h1>
-        <span class="version">v1.0.0</span>
+      <div class="nav-brand">
+        <span class="brand-icon">📋</span>
+        <span class="brand-name">FormEase</span>
+        <span class="version-badge">v1.0.0</span>
       </div>
-      <div class="links">
-        <a href="https://github.com/piyushrajyadav/formease" target="_blank">GitHub</a>
-        <a href="https://www.npmjs.com/package/formease" target="_blank">NPM</a>
+      
+      <div class="nav-menu">
+        <a href="#demo" class="nav-link">Demo</a>
+        <a href="#docs" class="nav-link">Docs</a>
+        <a href="#examples" class="nav-link">Examples</a>
+        <a href="https://github.com/piyushrajyadav/formease" target="_blank" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.npmjs.com/package/@piyushrajyadav/formease" target="_blank" class="nav-link">NPM</a>
       </div>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <header class="hero">
     <div class="container">
-      <h2>Intelligent Form Handling Made Simple</h2>
-      <p>A lightweight, accessible JavaScript library with smart validation, autosave, and error handling</p>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Intelligent Form Handling 
+          <span class="gradient-text">Made Simple</span>
+        </h1>
+        <p class="hero-description">
+          A lightweight, intelligent form handling library with smart validation, autosave, and accessibility features. 
+          Zero dependencies, framework agnostic, and TypeScript ready.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#demo" class="btn btn-primary">Try Demo</a>
+          <a href="#docs" class="btn btn-secondary">View Docs</a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">~35KB</div>
+            <div class="stat-label">Bundle Size</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Dependencies</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">53</div>
+            <div class="stat-label">Tests Passing</div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Demo Form Section -->
-    <section class="demo-section">
-      <h2>✨ Live Demo - All Features</h2>
-      <p class="subtitle">This demo showcases ALL FormEase features. Fill the form and click Submit to see validation.</p>
-
-      <div class="demo-grid">
-        <div class="demo-form">
-          <div id="successMessage" class="success-message">
-            ✅ Form submitted successfully!
-          </div>
-
-          <form id="demoForm" novalidate>
-            <div class="form-group">
-              <label for="fullName">Full Name *</label>
-              <input type="text" id="fullName" name="fullName" placeholder="John Doe">
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com">
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
-            </div>
-
-            <div class="form-group">
-              <label for="website">Website</label>
-              <input type="url" id="website" name="website" placeholder="https://example.com">
-            </div>
-
-            <div class="form-group">
-              <label for="age">Age *</label>
-              <input type="number" id="age" name="age" placeholder="18" min="18" max="120">
-            </div>
-
-            <div class="form-group">
-              <label for="password">Password *</label>
-              <input type="password" id="password" name="password" placeholder="Min 8 characters">
-              <small>Must be 8+ characters</small>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us something..."></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn-primary">Submit Form</button>
-              <button type="button" class="btn-secondary" onclick="resetForm()">Reset</button>
-            </div>
-          </form>
-        </div>
-
-        <div class="demo-info">
-          <div class="info-card">
-            <h3>🎯 What You'll See</h3>
-            <ul>
-              <li><strong>Smart Validation:</strong> Email, URL, phone, password checks</li>
-              <li><strong>Auto-save:</strong> Data saves as you type (refresh to test)</li>
-              <li><strong>Error Display:</strong> Validation errors on submit</li>
-              <li><strong>Accessibility:</strong> ARIA attributes for screen readers</li>
-              <li><strong>Type Detection:</strong> Auto-validates based on input type</li>
-            </ul>
-          </div>
-
-          <div class="info-card">
-            <h3>📊 Live Stats</h3>
-            <div class="stats">
-              <div class="stat-item">
-                <span class="stat-label">Fields Filled:</span>
-                <span id="filledCount" class="stat-value">0</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Validation Errors:</span>
-                <span id="errorCount" class="stat-value">0</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Auto-saved:</span>
-                <span id="savedStatus" class="stat-value">No</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <h3>💡 Test Auto-save</h3>
-            <ol>
-              <li>Fill in some fields</li>
-              <li>Refresh page (Ctrl+R)</li>
-              <li>See your data restored! ✨</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section">
-      <h2>✨ All Features</h2>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose FormEase?</h2>
+      
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">✅</div>
+          <div class="feature-icon">🎯</div>
           <h3>Smart Validation</h3>
-          <p>Auto-detects email, URL, phone, password, number, date. Custom validators supported.</p>
+          <p>Auto-detects input types and validates email, URL, phone, password, numbers, and dates intelligently.</p>
         </div>
-
+        
         <div class="feature-card">
           <div class="feature-icon">💾</div>
           <h3>Auto-Save</h3>
-          <p>Saves to localStorage automatically. Restores data on page reload.</p>
+          <p>Persist form data to localStorage with configurable debouncing. Never lose user input again.</p>
         </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">⚠️</div>
-          <h3>Error Handling</h3>
-          <p>Beautiful error messages with smooth animations.</p>
-        </div>
-
+        
         <div class="feature-card">
           <div class="feature-icon">♿</div>
-          <h3>Accessible</h3>
-          <p>Full ARIA support, screen-reader friendly, keyboard navigation.</p>
+          <h3>Accessibility First</h3>
+          <p>Full ARIA support, screen-reader friendly, keyboard navigation, and WCAG 2.1 compliant.</p>
         </div>
-
+        
         <div class="feature-card">
           <div class="feature-icon">🎨</div>
-          <h3>Customizable</h3>
-          <p>Custom error classes, positions, and renderers.</p>
+          <h3>Highly Customizable</h3>
+          <p>Flexible styling, error positioning, custom validators, and renderers. Make it yours.</p>
         </div>
-
+        
         <div class="feature-card">
           <div class="feature-icon">📦</div>
-          <h3>Lightweight</h3>
-          <p>Only ~8KB gzipped. Zero dependencies.</p>
+          <h3>Zero Dependencies</h3>
+          <p>No external dependencies means smaller bundle, better security, and fewer conflicts.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>Framework Agnostic</h3>
+          <p>Works seamlessly with Vanilla JS, React, Vue, Angular, or any JavaScript framework.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Installation Section -->
-    <section class="section">
-      <h2>📦 Installation</h2>
-      <div class="code-tabs">
-        <button class="tab-btn active" onclick="showTab('npm')">NPM</button>
-        <button class="tab-btn" onclick="showTab('cdn')">CDN</button>
-        <button class="tab-btn" onclick="showTab('yarn')">Yarn</button>
+  <!-- Quick Start Section -->
+  <section class="quick-start">
+    <div class="container">
+      <h2 class="section-title">Get Started in 30 Seconds</h2>
+      
+      <div class="install-tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="npm">npm</button>
+          <button class="tab-btn" data-tab="yarn">yarn</button>
+          <button class="tab-btn" data-tab="cdn">CDN</button>
+        </div>
+        
+        <div class="tab-content">
+          <div class="tab-panel active" id="npm">
+            <pre><code class="language-bash">npm i @piyushrajyadav/formease</code></pre>
+          </div>
+          <div class="tab-panel" id="yarn">
+            <pre><code class="language-bash">yarn add @piyushrajyadav/formease</code></pre>
+          </div>
+          <div class="tab-panel" id="cdn">
+            <pre><code class="language-html">&lt;script src="https://unpkg.com/@piyushrajyadav/formease@latest/dist/formease.umd.min.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+        </div>
       </div>
-
-      <div id="npm-tab" class="tab-content active">
-        <pre><code>npm install formease</code></pre>
-      </div>
-
-      <div id="cdn-tab" class="tab-content">
-        <pre><code>&lt;script src="https://unpkg.com/formease@latest/dist/formease.umd.min.js"&gt;&lt;/script&gt;</code></pre>
-      </div>
-
-      <div id="yarn-tab" class="tab-content">
-        <pre><code>yarn add formease</code></pre>
-      </div>
-    </section>
-
-    <!-- Usage Section -->
-    <section class="section">
-      <h2>🚀 Quick Start</h2>
-      <pre><code>import { createFormify } from 'formease';
+      
+      <div class="code-example">
+        <h3>Basic Usage</h3>
+        <pre><code class="language-javascript">import { createFormify } from '@piyushrajyadav/formease';
 
 const formify = createFormify({
   form: '#myForm',
@@ -209,18 +170,475 @@ const formify = createFormify({
     console.log('Form submitted:', data);
   }
 });</code></pre>
-    </section>
-  </main>
+      </div>
+    </div>
+  </section>
 
+  <!-- Live Demo Section -->
+  <section id="demo" class="demo-section">
+    <div class="container">
+      <h2 class="section-title">Interactive Demo</h2>
+      <p class="section-description">
+        Try all FormEase features in this live demo. Fill out the form to see real-time validation, 
+        auto-save functionality, and error handling in action.
+      </p>
+      
+      <div class="demo-container">
+        <div class="demo-form-wrapper">
+          <div class="demo-header">
+            <h3>Contact Form</h3>
+            <div class="demo-status" id="demoStatus">Ready</div>
+          </div>
+          
+          <div id="successMessage" class="alert alert-success" style="display: none;">
+            ✅ Form submitted successfully!
+          </div>
+          
+          <form id="demoForm" class="demo-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+              </div>
+              
+              <div class="form-group">
+                <label for="website">Website</label>
+                <input type="url" id="website" name="website" placeholder="https://example.com">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="age">Age *</label>
+                <input type="number" id="age" name="age" placeholder="25" min="18" max="120" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" placeholder="Min 8 characters" required>
+                <small class="form-hint">Must contain uppercase, lowercase, and number</small>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Submit Form</button>
+              <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
+              <button type="button" class="btn btn-outline" id="validateBtn">Validate</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="demo-info">
+          <div class="info-panel">
+            <h4>🎯 What You'll See</h4>
+            <ul>
+              <li><strong>Smart Validation:</strong> Email, URL, phone, password validation</li>
+              <li><strong>Auto-Save:</strong> Data persists as you type (try refreshing!)</li>
+              <li><strong>Error Display:</strong> Real-time validation feedback</li>
+              <li><strong>Accessibility:</strong> Full keyboard navigation and ARIA support</li>
+              <li><strong>Type Detection:</strong> Automatic validation based on input types</li>
+            </ul>
+          </div>
+          
+          <div class="info-panel">
+            <h4>📊 Live Statistics</h4>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value" id="fieldCount">0</span>
+                <span class="stat-label">Fields Filled</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value" id="errorCount">0</span>
+                <span class="stat-label">Validation Errors</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value" id="saveCount">0</span>
+                <span class="stat-label">Auto-Saves</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-panel">
+            <h4>⚙️ Configuration Used</h4>
+            <pre><code class="language-javascript">{
+  validation: {
+    validateOnSubmit: true,
+    validateOnBlur: true
+  },
+  autoSave: {
+    debounceDelay: 500,
+    excludeFields: ['password']
+  },
+  errorHandling: {
+    focusOnError: true
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Section -->
+  <section id="docs" class="docs-section">
+    <div class="container">
+      <h2 class="section-title">Documentation</h2>
+      
+      <div class="docs-nav">
+        <button class="docs-tab active" data-doc="api">API Reference</button>
+        <button class="docs-tab" data-doc="config">Configuration</button>
+        <button class="docs-tab" data-doc="validation">Validation Rules</button>
+        <button class="docs-tab" data-doc="frameworks">Framework Integration</button>
+      </div>
+      
+      <div class="docs-content">
+        <!-- API Reference -->
+        <div class="docs-panel active" id="api">
+          <h3>API Reference</h3>
+          
+          <div class="api-method">
+            <h4><code>createFormify(config: FormifyConfig)</code></h4>
+            <p>Creates and returns a new FormEase instance.</p>
+            <pre><code class="language-javascript">import { createFormify } from '@piyushrajyadav/formease';
+
+const formify = createFormify({
+  form: '#myForm',
+  validation: { /* validation config */ },
+  autoSave: { /* autosave config */ }
+});</code></pre>
+          </div>
+          
+          <div class="api-method">
+            <h4><code>formify.validate(): ValidationResult</code></h4>
+            <p>Manually validates the entire form and returns the result.</p>
+            <pre><code class="language-javascript">const result = formify.validate();
+if (result.isValid) {
+  console.log('Form is valid!');
+} else {
+  console.log('Errors:', result.errors);
+}</code></pre>
+          </div>
+          
+          <div class="api-method">
+            <h4><code>formify.getFormData(): FormData</code></h4>
+            <p>Gets current form data as a plain object.</p>
+            <pre><code class="language-javascript">const data = formify.getFormData();
+console.log(data); // { email: 'user@example.com', ... }</code></pre>
+          </div>
+          
+          <div class="api-method">
+            <h4><code>formify.reset(): void</code></h4>
+            <p>Resets the form to its initial state and clears all errors.</p>
+            <pre><code class="language-javascript">formify.reset();</code></pre>
+          </div>
+          
+          <div class="api-method">
+            <h4><code>formify.destroy(): void</code></h4>
+            <p>Removes all event listeners and cleans up the instance.</p>
+            <pre><code class="language-javascript">formify.destroy();</code></pre>
+          </div>
+        </div>
+        
+        <!-- Configuration -->
+        <div class="docs-panel" id="config">
+          <h3>Configuration Options</h3>
+          
+          <div class="config-section">
+            <h4>FormifyConfig</h4>
+            <pre><code class="language-typescript">interface FormifyConfig {
+  form: string | HTMLFormElement;          // Form selector or element
+  validation?: ValidationConfig;            // Validation configuration
+  autoSave?: AutoSaveConfig;               // Auto-save configuration
+  errorHandling?: ErrorConfig;             // Error display configuration
+  onValidationSuccess?: (data: FormData) => void;
+  onValidationError?: (errors: ErrorMap) => void;
+}</code></pre>
+          </div>
+          
+          <div class="config-section">
+            <h4>ValidationConfig</h4>
+            <pre><code class="language-typescript">interface ValidationConfig {
+  rules?: Record&lt;string, ValidationRule&gt;;
+  validateOnBlur?: boolean;      // Default: true
+  validateOnInput?: boolean;     // Default: false
+  validateOnSubmit?: boolean;    // Default: true
+}</code></pre>
+          </div>
+          
+          <div class="config-section">
+            <h4>AutoSaveConfig</h4>
+            <pre><code class="language-typescript">interface AutoSaveConfig {
+  storageKey?: string;           // Default: 'formease_autosave'
+  debounceDelay?: number;        // Default: 500ms
+  excludeFields?: string[];      // Default: ['password']
+  clearOnSubmit?: boolean;       // Default: true
+  onSave?: (data: FormData) => void;
+  onRestore?: (data: FormData) => void;
+}</code></pre>
+          </div>
+        </div>
+        
+        <!-- Validation Rules -->
+        <div class="docs-panel" id="validation">
+          <h3>Validation Rules</h3>
+          
+          <div class="validation-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Input Type</th>
+                  <th>Auto Validation</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>email</code></td>
+                  <td>✅</td>
+                  <td>Valid email format validation</td>
+                </tr>
+                <tr>
+                  <td><code>url</code></td>
+                  <td>✅</td>
+                  <td>Valid URL format validation</td>
+                </tr>
+                <tr>
+                  <td><code>tel</code></td>
+                  <td>✅</td>
+                  <td>Phone number validation (10+ digits)</td>
+                </tr>
+                <tr>
+                  <td><code>number</code></td>
+                  <td>✅</td>
+                  <td>Numeric value validation with min/max</td>
+                </tr>
+                <tr>
+                  <td><code>password</code></td>
+                  <td>✅</td>
+                  <td>Strong password (8+ chars, mixed case, numbers)</td>
+                </tr>
+                <tr>
+                  <td><code>date</code></td>
+                  <td>✅</td>
+                  <td>Valid date format validation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="validation-example">
+            <h4>Custom Validation Rules</h4>
+            <pre><code class="language-javascript">createFormify({
+  form: '#myForm',
+  validation: {
+    rules: {
+      username: {
+        required: true,
+        minLength: 3,
+        maxLength: 20,
+        pattern: /^[a-zA-Z0-9_]+$/,
+        custom: (value) => {
+          if (value.includes('admin')) {
+            return {
+              isValid: false,
+              errorMessage: 'Username cannot contain "admin"'
+            };
+          }
+          return { isValid: true };
+        }
+      }
+    }
+  }
+});</code></pre>
+          </div>
+        </div>
+        
+        <!-- Framework Integration -->
+        <div class="docs-panel" id="frameworks">
+          <h3>Framework Integration</h3>
+          
+          <div class="framework-example">
+            <h4>React</h4>
+            <pre><code class="language-jsx">import { useEffect, useRef } from 'react';
+import { createFormify } from '@piyushrajyadav/formease';
+
+function ContactForm() {
+  const formRef = useRef(null);
+  const formifyRef = useRef(null);
+
+  useEffect(() => {
+    if (formRef.current) {
+      formifyRef.current = createFormify({
+        form: formRef.current,
+        validation: {
+          rules: {
+            email: { required: true },
+            message: { required: true }
+          }
+        }
+      });
+    }
+
+    return () => formifyRef.current?.destroy();
+  }, []);
+
+  return &lt;form ref={formRef}&gt;{/* form content */}&lt;/form&gt;;
+}</code></pre>
+          </div>
+          
+          <div class="framework-example">
+            <h4>Vue 3</h4>
+            <pre><code class="language-javascript">&lt;template&gt;
+  &lt;form ref="formRef"&gt;
+    &lt;!-- form content --&gt;
+  &lt;/form&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import { ref, onMounted, onUnmounted } from 'vue';
+import { createFormify } from '@piyushrajyadav/formease';
+
+const formRef = ref(null);
+let formify = null;
+
+onMounted(() => {
+  formify = createFormify({
+    form: formRef.value,
+    validation: {
+      rules: {
+        email: { required: true }
+      }
+    }
+  });
+});
+
+onUnmounted(() => {
+  formify?.destroy();
+});
+&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples Section -->
+  <section id="examples" class="examples-section">
+    <div class="container">
+      <h2 class="section-title">Code Examples</h2>
+      
+      <div class="examples-grid">
+        <div class="example-card">
+          <h3>Basic Email Validation</h3>
+          <pre><code class="language-javascript">createFormify({
+  form: '#contactForm',
+  validation: {
+    rules: {
+      email: {
+        required: true,
+        errorMessage: 'Valid email required'
+      }
+    }
+  }
+});</code></pre>
+        </div>
+        
+        <div class="example-card">
+          <h3>Password Strength Check</h3>
+          <pre><code class="language-javascript">createFormify({
+  form: '#signupForm',
+  validation: {
+    rules: {
+      password: {
+        required: true,
+        minLength: 8,
+        custom: validatePassword
+      }
+    }
+  }
+});</code></pre>
+        </div>
+        
+        <div class="example-card">
+          <h3>Auto-Save Configuration</h3>
+          <pre><code class="language-javascript">createFormify({
+  form: '#draftForm',
+  autoSave: {
+    storageKey: 'article-draft',
+    debounceDelay: 300,
+    excludeFields: ['password'],
+    onSave: (data) => {
+      console.log('Saved:', data);
+    }
+  }
+});</code></pre>
+        </div>
+        
+        <div class="example-card">
+          <h3>Custom Error Handling</h3>
+          <pre><code class="language-javascript">createFormify({
+  form: '#customForm',
+  errorHandling: {
+    errorClass: 'my-error',
+    customRenderer: (el, msg) => {
+      // Custom error display
+    }
+  }
+});</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>Made with ❤️ by <a href="https://github.com/piyushrajyadav">Piyush Raj Yadav</a></p>
-      <p>MIT License • <a href="https://github.com/piyushrajyadav/formease">View on GitHub</a></p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="brand-icon">📋</span>
+          <span class="brand-name">FormEase</span>
+        </div>
+        
+        <div class="footer-links">
+          <a href="https://github.com/piyushrajyadav/formease" target="_blank">GitHub</a>
+          <a href="https://www.npmjs.com/package/@piyushrajyadav/formease" target="_blank">NPM</a>
+          <a href="https://github.com/piyushrajyadav/formease/issues" target="_blank">Issues</a>
+          <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to Top</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 FormEase. Made with ❤️ by <a href="https://github.com/piyushrajyadav" target="_blank">Piyush  Yadav</a></p>
+        <p>Licensed under MIT License</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Load FormEase -->
-  <script src="dist/formease.umd.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  
+  <!-- FormEase Library -->
+  <script src="../dist/formease.umd.js"></script>
+  
+  <!-- Demo Functionality -->
   <script src="demo.js"></script>
 </body>
 </html>

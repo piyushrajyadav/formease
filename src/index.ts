@@ -1,7 +1,7 @@
 /**
  * FormEase - A lightweight, intelligent form handling library
  * @module FormEase
- * @author Piyush Raj Yadav
+ * @author Piyush  Yadav
  * @license MIT
  */
 

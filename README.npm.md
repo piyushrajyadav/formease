@@ -45,33 +45,20 @@ pnpm add @piyushrajyadav/formease
 <script src="https://unpkg.com/@piyushrajyadav/formease@latest/dist/formease.umd.min.js"></script>
 ```
 
+## Quick Start
 
 ### Basic Usage
 
-**ES6 Modules:**
 ```javascript
-import { FormEase } from '@piyushrajyadav/formease';
+import FormEase from '@piyushrajyadav/formease';
 
 const form = new FormEase('#contact-form', {
+  autosave: true,
   validation: {
-    validateOnInput: true,
-    validateOnBlur: true,
-    rules: {
-      email: { required: true, type: 'email' },
-      name: { required: true, minLength: 2 }
-    }
-  },
-  autoSave: {
-    enabled: true,
-    storageKey: 'my-form-data'
+    email: [{ type: 'email', message: 'Invalid email' }],
+    name: [{ type: 'required', message: 'Name required' }]
   }
 });
-```
-
-**CDN/UMD:**
-```javascript
-// FormEase is available globally
-const form = new FormEase('#contact-form', options);
 ```
 
 ### HTML
@@ -155,9 +142,6 @@ interface FormEaseOptions {
 | `max` | Maximum numeric value | `{ type: 'max', value: 65 }` |
 | `pattern` | Custom regex pattern | `{ type: 'pattern', value: /^\d+$/ }` |
 
-### Password Strength Validation
-
-```javascript
 ## Framework Integration
 
 ### React
@@ -319,13 +303,12 @@ We welcome contributions! Please see our [Contributing Guide](https://github.com
 
 ## License
 
-MIT © [Piyush Raj Yadav](https://github.com/piyushrajyadav)
+MIT © [Piyush Yadav](https://github.com/piyushrajyadav)
 
 ## Support
 
 - 📝 [Documentation](https://github.com/piyushrajyadav/formease#readme)
 - 🐛 [Report Issues](https://github.com/piyushrajyadav/formease/issues)
-- 💬 [Discussions](https://github.com/piyushrajyadav/formease/discussions)
 - 📧 [Email](mailto:piyushyadavrajyadav@gmail.com)
 
 ---
