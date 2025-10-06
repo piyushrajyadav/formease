@@ -41,7 +41,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/piyushrajyadav/formease.git"
+    "url": "git+https://github.com/piyushrajyadav/formease.git"
   },
   "bugs": {
     "url": "https://github.com/piyushrajyadav/formease/issues"
