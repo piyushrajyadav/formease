@@ -1,6 +1,6 @@
 {
   "name": "@piyushrajyadav/formease",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight, intelligent form handling library with validation, autosave, and accessibility features",
   "type": "module",
   "main": "dist/index.js",
